@@ -63,7 +63,6 @@ header{
 }
 footer{
   padding:10px;
-  display: flex;
   border: 2px solid black;
   margin: 10px 40px;
   color: red;
