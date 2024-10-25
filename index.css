@@ -59,13 +59,13 @@ header{
   margin:20px 40px;
   margin-top: 40px;
   position:running(header);
-  background-size: cover;
 }
 footer{
   padding:10px;
   border: 2px solid black;
   margin: 10px 40px;
   color: red;
+  position:running(footer);
   font-weight: 800;
 }
 .headerSection{
@@ -182,11 +182,7 @@ flex: 1;
 .desp{
  width: 50%;
 }
-.item{
- display: flex;
- flex-direction: column;
- gap: 10px;
-}
+
 .color{
   background-color: #3d3d3e;
   color: white;
@@ -259,6 +255,7 @@ display: none;
 
 .datosE{
   font-size: 10px;
+  width: 100%;
 }
 .text-decoration{
   text-decoration: underline;
