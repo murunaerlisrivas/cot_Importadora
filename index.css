@@ -63,7 +63,6 @@ header{
 footer{
   padding:10px;
   border: 2px solid black;
-  margin: 10px 40px;
   color: red;
   position:running(footer);
   font-weight: 800;
@@ -164,7 +163,6 @@ flex: 1;
   font-size:10px;
 }
 .cant{
-  width: 2%;
   text-align: center;
 }
 .vu{
@@ -177,8 +175,9 @@ flex: 1;
   text-align: center;
   border: 0.5px solid #1a1919;
 }
-.item{
- width: 24%;
+.alt{
+ width: 25%;
+ text-align: start; 
 }
 .desp{
  width: 50%;
