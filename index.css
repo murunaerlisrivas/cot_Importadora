@@ -60,11 +60,11 @@ header{
   margin-top: 40px;
   position:running(header);
 }
-footer{
+.datosempresa{
+  margin:20px 40px;
   padding:10px;
   border: 2px solid black;
   color: red;
-  position:running(footer);
   font-weight: 800;
   font-size: 10px;
 }
@@ -164,23 +164,24 @@ flex: 1;
 }
 .cant{
   text-align: center;
+  width: 5%;
 }
 .vu{
-  width: 12%;
+  width: 15%;
   text-align: center;
   border: 0.5px solid #1a1919;
 }
 .vt{
-  width: 12%;
+  width: 15%;
   text-align: center;
   border: 0.5px solid #1a1919;
 }
 .alt{
- width: 25%;
+ width: 20%;
  text-align: start; 
 }
 .desp{
- width: 50%;
+ width: 45%;
 }
 
 .color{
