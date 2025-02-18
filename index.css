@@ -326,3 +326,14 @@ header {
   height: 100px;
   width: 100px;
 }
+
+.presupuesto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin-left: 20px;
+  width: 30%;
+  line-height: 0px;
+}
