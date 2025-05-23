@@ -79,13 +79,16 @@ header {
   justify-content: space-between;
 }
 
+
 .presupuesto {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid black;
   margin-left: 20px;
   width: 30%;
+  line-height: 0px;
 }
 
 .w100 {
@@ -323,17 +326,12 @@ header {
 }
 
 .imgDescp {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
 }
 
-.presupuesto {
+.images {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-  margin-left: 20px;
-  width: 30%;
-  line-height: 0px;
+  justify-items: center;
 }
