@@ -335,3 +335,26 @@ header {
   justify-content: center;
   justify-items: center;
 }
+
+.itemTable {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.itemTable th {
+  border: 0.5px solid #1a1919;
+  padding: 8px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 14px;
+  background-color: #3d3d3e;
+  text-align: left;
+  color: white;
+}
+
+.itemTable td {
+  padding: 8px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 10px;
+}
