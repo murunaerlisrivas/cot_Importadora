@@ -6,10 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const filas = tabla.querySelectorAll('tbody tr');
 
         filas.forEach(fila => {
-            // ----- BLOQUE 1: lista <ul> de cantidades (cant1..10) -----
-            const ul = fila.querySelector('ul');
+            // --- BLOQUE 1: CANTIDADES <ul class="cantd"> ---
+            const ul = fila.querySelector('ul.cantd');
             const liItems = ul?.querySelectorAll('li[class^="cant"]') || [];
             const uniqueEmb = fila.querySelector('p.uniqueEmb');
+            const nroEmbarque = fila.querySelector('span.nroEmbarque');
 
             let hayContenidoCant = false;
 
@@ -23,6 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            // 🟡 CORREGIDO: Si nroEmbarque es vacío o 'none', lo reemplaza por '1'
+            if (nroEmbarque) {
+                const textoNro = nroEmbarque.textContent.trim().toLowerCase();
+                if (textoNro === '' || textoNro === 'none') {
+                    nroEmbarque.textContent = '1';
+                }
+            }
+
+            // Mostrar lista si hay contenido, y ocultar uniqueEmb si aplica
             if (!hayContenidoCant) {
                 ul.style.display = 'none';
             } else {
@@ -30,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (uniqueEmb) uniqueEmb.style.display = 'none';
             }
 
-            // ----- BLOQUE 2: lista <ul class="prices"> según valor unitario -----
+            // --- BLOQUE 2: PRECIOS <ul class="prices"> ---
             const unitarioP = fila.querySelector('p.unitario');
             const pricesUl = fila.querySelector('ul.prices');
             const priceItems = pricesUl?.querySelectorAll('li') || [];
@@ -56,5 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 
 
