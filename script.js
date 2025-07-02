@@ -68,18 +68,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-const p = document.getElementById('notas');
-const textoOriginal = p.textContent;
+document.addEventListener('DOMContentLoaded', function () {
+    const elementosNotas = document.querySelectorAll('.notas_space');
 
+    elementosNotas.forEach(el => {
+        const textoOriginal = el.textContent;
 
-const textoFormateado = textoOriginal
-    .toUpperCase()
-    .split(',')
-    .map(fragmento => fragmento.trim())
-    .join('<br>');
+        const fragmentos = textoOriginal
+            .split(',')
+            .map(f => f.trim().toUpperCase());
 
+        el.innerHTML = ''; // Limpia contenido
 
-p.innerHTML = textoFormateado;
+        fragmentos.forEach((texto, index) => {
+            const span = document.createElement('span');
+            span.textContent = texto;
+            el.appendChild(span);
+            if (index < fragmentos.length - 1) {
+                el.appendChild(document.createElement('br'));
+            }
+        });
+    });
+});
 
 
 
