@@ -65,7 +65,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
 });
+
+const p = document.getElementById('notas');
+const textoOriginal = p.textContent;
+
+
+const textoFormateado = textoOriginal
+    .toUpperCase()
+    .split(',')
+    .map(fragmento => fragmento.trim())
+    .join('<br>');
+
+
+p.innerHTML = textoFormateado;
 
 
 
