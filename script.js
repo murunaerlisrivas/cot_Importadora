@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const filas = tabla.querySelectorAll('tbody tr');
 
         filas.forEach(fila => {
-            // --- BLOQUE 1: CANTIDADES <ul class="cantd"> ---
             const ul = fila.querySelector('ul.cantd');
             const liItems = ul?.querySelectorAll('li[class^="cant"]') || [];
             const uniqueEmb = fila.querySelector('p.uniqueEmb');
@@ -24,20 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // 🟡 CORREGIDO: Si nroEmbarque es vacío o 'none', lo reemplaza por '1'
+
+            let valorNro = '';
             if (nroEmbarque) {
-                const textoNro = nroEmbarque.textContent.trim().toLowerCase();
-                if (textoNro === '' || textoNro === 'none') {
+                valorNro = nroEmbarque.textContent.trim().toLowerCase();
+                if (valorNro === '' || valorNro === 'none') {
                     nroEmbarque.textContent = '1';
+                    valorNro = '1';
                 }
             }
+            const nro = parseInt(valorNro, 10);
+            const debeMostrarUniqueEmb = valorNro === '' || isNaN(nro) || nro < 2;
 
-            // Mostrar lista si hay contenido, y ocultar uniqueEmb si aplica
-            if (!hayContenidoCant) {
-                ul.style.display = 'none';
+            if (debeMostrarUniqueEmb) {
+                if (uniqueEmb) uniqueEmb.style.display = 'block';
+                if (ul) ul.style.display = 'none';
             } else {
-                ul.style.display = 'block';
                 if (uniqueEmb) uniqueEmb.style.display = 'none';
+                if (ul) ul.style.display = hayContenidoCant ? 'block' : 'none';
             }
 
             // --- BLOQUE 2: PRECIOS <ul class="prices"> ---
